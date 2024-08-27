@@ -1,0 +1,30 @@
+{
+  "name": "ce-node-utils",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/ce-node-utils.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "exports": {
+    "types": "./index.d.ts",
+    "import": "./dist/ce-node-utils.js",
+    "require": "./dist/ce-node-utils.cjs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "lodash-es": "^4.17.21",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^2.0.5"
+  }
+}
