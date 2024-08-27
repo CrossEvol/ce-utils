@@ -1,0 +1,4 @@
+packages:
+  - 'ce-common-utils'
+  - 'ce-browser-utils'
+  - 'ce-node-utils'
