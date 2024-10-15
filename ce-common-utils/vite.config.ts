@@ -7,16 +7,69 @@ export default defineConfig({
         build: {
                 lib: {
                         entry: resolve(__dirname, 'src/main.ts'),
-                        formats: ['es', 'cjs'],
+                        formats: ['es', 'cjs'], // Output in both ES and CJS formats
                 },
+                rollupOptions: {
+                        external: ['crypto', 'fs'], // Exclude Node.js built-in modules
+                        output: [
+                                {
+                                        format: 'es',
+                                        entryFileNames: 'ce-common-utils.mjs', // Filename for ES modules
+                                        chunkFileNames: '[name].mjs',
+                                        manualChunks(id) {
+                                                if (
+                                                        id.includes(
+                                                                'node_modules'
+                                                        )
+                                                ) {
+                                                        return 'vendor'
+                                                }
+                                                if (id.includes('src/utils')) {
+                                                        return 'utils/utils'
+                                                }
+                                                if (id.includes('src/sample')) {
+                                                        return 'sample/sample'
+                                                }
+                                        },
+                                },
+                                {
+                                        format: 'cjs',
+                                        entryFileNames: 'ce-common-utils.cjs', // Filename for CommonJS modules
+                                        chunkFileNames: '[name].cjs',
+                                        manualChunks(id) {
+                                                if (
+                                                        id.includes(
+                                                                'node_modules'
+                                                        )
+                                                ) {
+                                                        return 'vendor'
+                                                }
+                                                if (id.includes('src/utils')) {
+                                                        return 'utils/utils'
+                                                }
+                                                if (id.includes('src/sample')) {
+                                                        return 'sample/sample'
+                                                }
+                                        },
+                                },
+                        ],
+                },
+                target: 'node20',
+                sourcemap: true,
+                minify: false,
         },
         resolve: {
                 alias: {
                         '@': path.join(__dirname, 'src'),
                 },
         },
-        plugins: [dts()],
+        plugins: [
+                dts({
+                        exclude: ['**/*.test.ts', '**/*.spec.ts'],
+                }),
+        ],
         esbuild: {
+                platform: 'neutral',
                 exclude: ['**/*.test.ts', '**/*.spec.ts'],
         },
 })

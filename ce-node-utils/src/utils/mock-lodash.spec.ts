@@ -21,7 +21,7 @@ import {
   uniqBy,
   uniqWith,
 } from 'lodash-es'
-import {describe,it,expect} from 'vitest'
+import { describe, expect, it } from 'vitest'
 import {
   _cloneDeep,
   _isEqual,
@@ -376,33 +376,6 @@ describe('MergeTest', () => {
     expect(destination.firstName).toBe('Thomas')
     expect(destination.rank).toBe('Commander')
   })
-})
-
-describe('DebounceTest', () => {
-  // only display , not really test
-  function autocomplete(el: any) {
-    console.log('Called:', el.value)
-  }
-
-  it('should ', () => {})
-
-  // it('debounce', async () => {
-  //   const wait = 100
-  //   const el = new Object() as any
-  //   el.addEventListener('change', debounce(autocomplete, wait))
-
-  //   el.value = 'te'
-  //   el.trigger('change') // "Called: te" after 100ms
-  //   await new Promise((resolve) => setTimeout(resolve, 110))
-
-  //   el.value = 'test'
-  //   // Nothing, because the next 'change' event takes over
-  //   el.trigger('change')
-  //   await new Promise((resolve) => setTimeout(resolve, 50))
-
-  //   el.value = 'testing'
-  //   el.trigger('change') // "Called: testing" after 100ms
-  // })
 })
 
 describe('SumTest', () => {

@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it } from 'vitest'
 describe('HignOrderFunc', () => {
         it('Print params before , print result after', () => {
                 const log =

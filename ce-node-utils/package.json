@@ -16,6 +16,7 @@
     "vite-plugin-dts": "^3.9.1",
     "vitest": "^2.0.5"
   },
-  "main": "./dist/ce-node-utils.js",
+  "main": "./dist/ce-node-utils.cjs",
+  "module": "./dist/ce-node-utils.js",
   "types": "./dist/main.d.ts"
 }

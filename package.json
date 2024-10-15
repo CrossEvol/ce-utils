@@ -6,19 +6,21 @@
   "workspaces": [
     "ce-common-utils",
     "ce-browser-utils",
-    "ce-node-utils"
+    "ce-node-utils",
+    "examples"
   ],
   "scripts": {
+    "examples": "pnpm --filter examples",
     "common": "pnpm --filter ce-common-utils",
-    "browser": "pnpm --filter ce-browser-utils",
-    "node": "pnpm --filter ce-node-utils"
+    "node": "pnpm --filter ce-node-utils",
+    "browser": "pnpm --filter ce-browser-utils"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@testing-library/react": "^16.0.0",
-    "vite": "^5.4.1",
-    "vitest": "^2.0.5"
+    "@testing-library/react": "^16.0.1",
+    "vite": "^5.4.9",
+    "vitest": "^2.1.3"
   }
 }
