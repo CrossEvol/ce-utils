@@ -7,13 +7,16 @@
     "ce-common-utils",
     "ce-browser-utils",
     "ce-node-utils",
+    "ce-logging",
     "examples"
   ],
   "scripts": {
     "examples": "pnpm --filter examples",
     "common": "pnpm --filter ce-common-utils",
     "node": "pnpm --filter ce-node-utils",
-    "browser": "pnpm --filter ce-browser-utils"
+    "logging": "pnpm --filter ce-logging",
+    "browser": "pnpm --filter ce-browser-utils",
+    "up": "pnpm update --latest --recursive"
   },
   "keywords": [],
   "author": "",
