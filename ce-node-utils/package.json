@@ -4,19 +4,33 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "lint": "eslint . --fix --ignore-pattern dist/*",
     "dev": "vite",
     "test": "vitest",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "key:gen": "tsx scripts/generateKeyPair.ts"
   },
   "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/lodash-es": "^4.17.12",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "globals": "^15.11.0",
     "lodash-es": "^4.17.21",
+    "prettier": "3.3.3",
+    "tsx": "^4.19.1",
     "typescript": "^5.6.3",
+    "typescript-eslint": "^8.11.0",
     "vite": "^5.4.9",
     "vite-plugin-dts": "^4.2.4",
     "vitest": "^2.1.3"
   },
   "main": "./dist/ce-node-utils.cjs",
   "module": "./dist/ce-node-utils.mjs",
-  "types": "./dist/main.d.ts"
+  "types": "./dist/main.d.ts",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  }
 }
